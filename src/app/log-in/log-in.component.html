@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Untitled Survey Website</h1>
+    <form id="login_form" (ngSubmit)="onSubmit()">
+      <input type="text" placeholder="username" [(ngModel)]="data.username" name="username" class="field">
+      <input type="password" placeholder="password" [(ngModel)]="data.password" name="password" class="field">
+      <input type="password" *ngIf="createUserPage"  placeholder="confirm password" [(ngModel)]="data.password_confirm" name="password_confirm" class="field">
+      <input type="submit" [value]="buttonText" class="btn">
+    </form>
+    <div *ngIf="setError" style="color: red;text-align: center">{{errorText}}</div>
+    <div *ngIf="isSuccess" style="color: green; text-align: center; font-weight: bold">Success!</div>
+    <div class="pass-link">
+      <a href="#" (click)="changeMode()">{{changeModeText}}</a>
+    </div>  
+  </div>
+</div>
